@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,6 +53,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Cybersecurity Brand Colors
+				cyber: {
+					green: 'hsl(var(--cyber-green))',
+					'green-bright': 'hsl(var(--cyber-green-bright))',
+					teal: 'hsl(var(--cyber-teal))'
+				},
+				danger: 'hsl(var(--danger-red))',
+				warning: 'hsl(var(--warning-orange))',
+				info: 'hsl(var(--info-blue))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
