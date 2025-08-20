@@ -12,13 +12,41 @@ import {
   Download,
   Activity
 } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
-  // Mock assessment data
+  const [searchParams] = useSearchParams();
+  const [assessmentData, setAssessmentData] = useState(null);
+
+  // Get assessment data from URL params or localStorage
+  useEffect(() => {
+    const storedData = localStorage.getItem('currentAssessment');
+    const urlParams = {
+      url: searchParams.get('url'),
+      name: searchParams.get('name'),
+      plan: searchParams.get('plan'),
+      email: searchParams.get('email')
+    };
+
+    if (storedData) {
+      setAssessmentData(JSON.parse(storedData));
+    } else if (urlParams.url) {
+      setAssessmentData({
+        targetUrl: urlParams.url,
+        websiteName: urlParams.name || 'Assessment',
+        plan: urlParams.plan || 'Standard',
+        contactEmail: urlParams.email || ''
+      });
+    }
+  }, [searchParams]);
+
+  // Default assessment data if none provided
   const currentAssessment = {
-    name: "Example Company Assessment",
-    url: "https://example.com",
-    plan: "Both Teams",
+    name: assessmentData?.websiteName || "Example Company Assessment",
+    url: assessmentData?.targetUrl || "https://example.com",
+    plan: assessmentData?.plan || "Both Teams",
+    email: assessmentData?.contactEmail || "",
     status: "In Progress",
     progress: 65
   };
@@ -30,7 +58,12 @@ const Dashboard = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
-            <p className="text-muted-foreground">Monitor your security assessments</p>
+            <div className="space-y-1">
+              <p className="text-muted-foreground">Target: <span className="text-cyber-green font-medium">{currentAssessment.url}</span></p>
+              {currentAssessment.email && (
+                <p className="text-sm text-muted-foreground">Contact: {currentAssessment.email}</p>
+              )}
+            </div>
           </div>
           <Badge className="bg-cyber-gradient text-background w-fit mt-4 md:mt-0">
             {currentAssessment.plan}

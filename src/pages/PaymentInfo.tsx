@@ -24,9 +24,28 @@ const PaymentInfo = () => {
   };
 
   const handlePayment = () => {
-    // For now, redirect to dashboard
-    // Note: Payment processing requires Supabase connection
-    window.location.href = '/dashboard';
+    // Store assessment data for dashboard
+    const assessmentData = {
+      websiteName: formData.websiteName,
+      targetUrl: formData.targetUrl,
+      contactEmail: formData.contactEmail,
+      companyName: formData.companyName,
+      plan: plan,
+      price: price,
+      timestamp: new Date().toISOString()
+    };
+    
+    localStorage.setItem('currentAssessment', JSON.stringify(assessmentData));
+    
+    // Redirect to dashboard with URL params
+    const params = new URLSearchParams({
+      url: formData.targetUrl,
+      name: formData.websiteName,
+      plan: plan || '',
+      email: formData.contactEmail
+    });
+    
+    window.location.href = `/dashboard?${params.toString()}`;
   };
 
   return (
