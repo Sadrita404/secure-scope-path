@@ -137,7 +137,7 @@ const Index = () => {
           
           <div className="text-center mt-12">
             <Link to="/pricing" className="btn-cyber">
-              Compare Plans
+              View Plans
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </div>

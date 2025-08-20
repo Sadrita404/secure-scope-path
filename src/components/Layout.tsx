@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Shield, Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -44,17 +45,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center space-x-4">
+              <ThemeToggle />
               <Link
-                to="/pricing"
+                to="/dashboard"
                 className="btn-outline text-sm"
               >
-                Sign In
+                Dashboard
               </Link>
               <Link
                 to="/pricing"
                 className="btn-cyber text-sm"
               >
-                Start Free Scan
+                Start Free
               </Link>
             </div>
 
@@ -90,19 +92,22 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   </Link>
                 ))}
                 <div className="flex flex-col space-y-2 pt-4">
+                  <div className="flex justify-center mb-4">
+                    <ThemeToggle />
+                  </div>
                   <Link
-                    to="/pricing"
+                    to="/dashboard"
                     className="btn-outline text-sm text-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Sign In
+                    Dashboard
                   </Link>
                   <Link
                     to="/pricing"
                     className="btn-cyber text-sm text-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Start Free Scan
+                    Start Free
                   </Link>
                 </div>
               </nav>

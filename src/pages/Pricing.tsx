@@ -125,7 +125,10 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                <Link to="/dashboard" className={`${plan.ctaClass} w-full text-center block`}>
+                <Link 
+                  to={plan.name === "Free" ? "/dashboard" : `/payment-info?plan=${plan.name}&price=${plan.price}`} 
+                  className={`${plan.ctaClass} w-full text-center block`}
+                >
                   {plan.cta}
                 </Link>
               </div>
