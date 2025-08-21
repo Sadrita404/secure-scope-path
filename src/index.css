@@ -134,7 +134,7 @@
   /* Custom Button Variants */
   .btn-cyber {
     @apply bg-gradient-to-r from-[hsl(var(--cyber-green))] to-[hsl(var(--cyber-green-bright))] 
-           text-[hsl(var(--primary-foreground))] font-semibold px-8 py-4 rounded-2xl 
+           text-[hsl(var(--primary-foreground))] font-semibold px-8 py-4 rounded-sm 
            shadow-[var(--shadow-cyber)] hover:shadow-[var(--shadow-glow)] 
            transform hover:scale-105 transition-all duration-300;
   }
