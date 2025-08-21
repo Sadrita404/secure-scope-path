@@ -11,7 +11,7 @@
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
-    --card: 0 0% 100%;
+    --card: 0 0% 98%;
     --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
@@ -26,8 +26,8 @@
     --secondary: 210 40% 96%;
     --secondary-foreground: 240 10% 3.9%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 46.9%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 25% 26.9%;
 
     --accent: 142 76% 36%;
     --accent-foreground: 0 0% 100%;
@@ -35,7 +35,7 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 87.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 142 76% 36%;
 
@@ -52,70 +52,64 @@
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--cyber-green)), hsl(var(--cyber-green-bright)));
     --gradient-cyber: linear-gradient(135deg, hsl(var(--cyber-green)) 0%, hsl(var(--cyber-teal)) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(215 25% 8%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(210 40% 96%) 100%);
 
     /* Shadows & Effects */
     --shadow-cyber: 0 10px 30px -10px hsl(var(--cyber-green) / 0.3);
     --shadow-glow: 0 0 40px hsl(var(--cyber-green-bright) / 0.2);
-    --shadow-card: 0 4px 20px -2px hsl(220 23% 6% / 0.4);
+    --shadow-card: 0 4px 20px -2px hsl(220 23% 6% / 0.1);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 142 86% 6%;
-    --foreground: 0 0% 100%;
+    --background: 142 30% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 142 86% 6%;
-    --card-foreground: 0 0% 100%;
+    --card: 142 25% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 142 86% 6%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 142 25% 10%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 142 86% 55%;
-    --primary-foreground: 142 86% 6%;
+    --primary-foreground: 142 30% 8%;
 
-    --secondary: 142 25% 12%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 142 20% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 142 25% 12%;
-    --muted-foreground: 142 20% 65%;
+    --muted: 142 20% 15%;
+    --muted-foreground: 142 10% 70%;
 
     --accent: 142 86% 55%;
-    --accent-foreground: 142 86% 6%;
+    --accent-foreground: 142 30% 8%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 142 20% 15%;
-    --input: 142 20% 15%;
+    --border: 142 15% 20%;
+    --input: 142 15% 20%;
     --ring: 142 86% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --sidebar-background: 142 35% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 142 86% 55%;
+    --sidebar-primary-foreground: 142 30% 8%;
+    --sidebar-accent: 142 15% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 142 15% 18%;
+    --sidebar-ring: 142 86% 55%;
   }
 }
 
@@ -141,7 +135,7 @@
 
   .btn-outline {
     @apply border-2 border-[hsl(var(--cyber-green))] text-[hsl(var(--cyber-green))] 
-           font-semibold px-8 py-4 rounded-2xl hover:bg-[hsl(var(--cyber-green))] 
+           font-semibold px-8 py-4 rounded-sm hover:bg-[hsl(var(--cyber-green))] 
            hover:text-[hsl(var(--primary-foreground))] transform hover:scale-105 
            transition-all duration-300;
   }
