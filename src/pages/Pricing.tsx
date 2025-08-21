@@ -5,22 +5,6 @@ import { Link } from "react-router-dom";
 const Pricing = () => {
   const plans = [
     {
-      name: "Free",
-      price: "₹0",
-      color: "text-muted-foreground",
-      bgColor: "bg-card",
-      borderColor: "border-border",
-      icon: <Shield className="w-8 h-8" />,
-      features: [
-        "Baseline footprint & basic misconfiguration checks",
-        "Sample risk summary",
-        "1 project, limited scope",
-        "Basic dashboard access"
-      ],
-      cta: "Start Free Scan",
-      ctaClass: "btn-outline"
-    },
-    {
       name: "Red Team",
       price: "₹1,500",
       color: "text-foreground",
@@ -89,7 +73,7 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
               <div
                 key={index}
@@ -126,7 +110,7 @@ const Pricing = () => {
                 </ul>
 
                 <Link 
-                  to={plan.name === "Free" ? "/dashboard" : `/payment-info?plan=${plan.name}&price=${plan.price}`} 
+                  to={`/payment-info?plan=${plan.name}&price=${plan.price}`} 
                   className={`${plan.ctaClass} w-full text-center block`}
                 >
                   {plan.cta}
