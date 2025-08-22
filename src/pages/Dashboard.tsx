@@ -20,6 +20,16 @@ const Dashboard = () => {
   const [searchParams] = useSearchParams();
   const [assessmentData, setAssessmentData] = useState(null);
 
+  // Check if user has access to dashboard
+  useEffect(() => {
+    const hasAccess = localStorage.getItem('dashboardAccess');
+    if (!hasAccess) {
+      // Redirect to pricing if no access
+      window.location.href = '/pricing';
+      return;
+    }
+  }, []);
+
   // Get assessment data from URL params or localStorage
   useEffect(() => {
     const storedData = localStorage.getItem('currentAssessment');

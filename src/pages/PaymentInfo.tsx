@@ -32,10 +32,12 @@ const PaymentInfo = () => {
       companyName: formData.companyName,
       plan: plan,
       price: price,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      paymentCompleted: true
     };
     
     localStorage.setItem('currentAssessment', JSON.stringify(assessmentData));
+    localStorage.setItem('dashboardAccess', 'true');
     
     // Redirect to dashboard with URL params
     const params = new URLSearchParams({
@@ -45,6 +47,8 @@ const PaymentInfo = () => {
       email: formData.contactEmail
     });
     
+    // Show success message and redirect
+    alert('Payment processed successfully! Redirecting to your dashboard...');
     window.location.href = `/dashboard?${params.toString()}`;
   };
 

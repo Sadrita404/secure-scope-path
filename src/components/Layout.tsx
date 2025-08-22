@@ -10,7 +10,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const navItems = [
     { path: "/", label: "Home" },
     { path: "/pricing", label: "Attacks & Pricing" },
-    { path: "/dashboard", label: "Dashboard" },
     { path: "/about", label: "About Us" },
     { path: "/developers", label: "Developers" },
     { path: "/contact", label: "Contact" },
@@ -46,12 +45,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center space-x-4">
               <ThemeToggle />
-              <Link
-                to="/dashboard"
-                className="btn-outline text-sm"
-              >
-                Dashboard
-              </Link>
               <Link
                 to="/pricing"
                 className="btn-cyber text-sm"
@@ -95,13 +88,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   <div className="flex justify-center mb-4">
                     <ThemeToggle />
                   </div>
-                  <Link
-                    to="/dashboard"
-                    className="btn-outline text-sm text-center"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
                   <Link
                     to="/pricing"
                     className="btn-cyber text-sm text-center"
