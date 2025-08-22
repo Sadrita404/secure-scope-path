@@ -134,21 +134,12 @@ const PaymentInfo = () => {
               <Card className="p-6 mb-6">
                 <div className="text-center">
                   <img 
-                    src="/lovable-uploads/240bb10a-5bb6-47b1-8782-f255b9f984b8.png"
-                    alt="Payment QR Code - Sadrita Neogi UPI"
-                    className="w-48 h-48 mx-auto mb-4 rounded-lg"
+                    src="/lovable-uploads/da432101-882b-4d0b-bcc2-9e5254160507.png"
+                    alt="Payment QR Code - Sadrita Neogi UPI ₹2,500"
+                    className="w-64 h-80 mx-auto mb-4 rounded-lg"
                   />
-                  <p className="text-sm font-medium mb-2">
-                    Sadrita Neogi
-                  </p>
-                  <p className="text-xs text-muted-foreground mb-2">
-                    UPI ID: simaniogi@okhdfcbank
-                  </p>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Scan to pay with any UPI app
-                  </p>
                   <p className="text-xs text-muted-foreground">
-                    Or use the payment button below
+                    Scan to pay with any UPI app
                   </p>
                 </div>
               </Card>
