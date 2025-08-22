@@ -56,7 +56,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 to="/pricing"
                 className="btn-cyber text-sm"
               >
-                Start Free
+                View Plans
               </Link>
             </div>
 
@@ -107,7 +107,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     className="btn-cyber text-sm text-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Start Free
+                    View Plans
                   </Link>
                 </div>
               </nav>
