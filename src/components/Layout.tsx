@@ -1,19 +1,49 @@
 import { Link, useLocation } from "react-router-dom";
 import { Shield, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasDashboardAccess, setHasDashboardAccess] = useState(false);
 
-  const navItems = [
+  // Check dashboard access on component mount and when localStorage changes
+  useEffect(() => {
+    const checkAccess = () => {
+      const hasAccess = localStorage.getItem('dashboardAccess') === 'true';
+      setHasDashboardAccess(hasAccess);
+    };
+
+    checkAccess();
+    
+    // Listen for storage changes to update access when payment is completed
+    window.addEventListener('storage', checkAccess);
+    
+    return () => {
+      window.removeEventListener('storage', checkAccess);
+    };
+  }, []);
+
+  const baseNavItems = [
     { path: "/", label: "Home" },
     { path: "/pricing", label: "Attacks & Pricing" },
     { path: "/about", label: "About Us" },
     { path: "/developers", label: "Developers" },
     { path: "/contact", label: "Contact" },
   ];
+
+  // Add dashboard to nav items if user has access
+  const navItems = hasDashboardAccess 
+    ? [
+        { path: "/", label: "Home" },
+        { path: "/pricing", label: "Attacks & Pricing" },
+        { path: "/dashboard", label: "Dashboard" },
+        { path: "/about", label: "About Us" },
+        { path: "/developers", label: "Developers" },
+        { path: "/contact", label: "Contact" },
+      ]
+    : baseNavItems;
 
   return (
     <div className="min-h-screen bg-dark-gradient">
@@ -45,6 +75,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center space-x-4">
               <ThemeToggle />
+              {hasDashboardAccess && (
+                <Link
+                  to="/dashboard"
+                  className="btn-outline text-sm"
+                >
+                  Dashboard
+                </Link>
+              )}
               <Link
                 to="/pricing"
                 className="btn-cyber text-sm"
@@ -88,6 +126,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   <div className="flex justify-center mb-4">
                     <ThemeToggle />
                   </div>
+                  {hasDashboardAccess && (
+                    <Link
+                      to="/dashboard"
+                      className="btn-outline text-sm text-center"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Dashboard
+                    </Link>
+                  )}
                   <Link
                     to="/pricing"
                     className="btn-cyber text-sm text-center"

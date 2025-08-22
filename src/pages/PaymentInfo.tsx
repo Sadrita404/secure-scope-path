@@ -39,6 +39,9 @@ const PaymentInfo = () => {
     localStorage.setItem('currentAssessment', JSON.stringify(assessmentData));
     localStorage.setItem('dashboardAccess', 'true');
     
+    // Trigger storage event for other components to update
+    window.dispatchEvent(new Event('storage'));
+    
     // Redirect to dashboard with URL params
     const params = new URLSearchParams({
       url: formData.targetUrl,
