@@ -134,8 +134,11 @@ const PaymentInfo = () => {
               <Card className="p-6 mb-6">
                 <div className="text-center">
                   <img 
-                    src="/lovable-uploads/da432101-882b-4d0b-bcc2-9e5254160507.png"
-                    alt="Payment QR Code - Sadrita Neogi UPI ₹2,500"
+                    src={plan === "Both" 
+                      ? "/lovable-uploads/da432101-882b-4d0b-bcc2-9e5254160507.png"
+                      : "/lovable-uploads/c07d047f-fe41-4b1c-8287-a4734a79fac4.png"
+                    }
+                    alt={`Payment QR Code - Sadrita Neogi UPI ${plan === "Both" ? "₹2,500" : "₹1,500"}`}
                     className="w-64 h-80 mx-auto mb-4 rounded-lg"
                   />
                   <p className="text-xs text-muted-foreground">
