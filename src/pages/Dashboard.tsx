@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import jsPDF from 'jspdf';
 
 const Dashboard = () => {
   const [searchParams] = useSearchParams();
@@ -49,6 +50,62 @@ const Dashboard = () => {
     email: assessmentData?.contactEmail || "",
     status: "In Progress",
     progress: 65
+  };
+
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    
+    // Header
+    doc.setFontSize(20);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Security Assessment Report', 20, 30);
+    
+    // Company info
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`Assessment Name: ${currentAssessment.name}`, 20, 50);
+    doc.text(`Target URL: ${currentAssessment.url}`, 20, 65);
+    doc.text(`Assessment Type: ${currentAssessment.plan}`, 20, 80);
+    doc.text(`Contact Email: ${currentAssessment.email}`, 20, 95);
+    doc.text(`Status: ${currentAssessment.status}`, 20, 110);
+    doc.text(`Progress: ${currentAssessment.progress}%`, 20, 125);
+    doc.text(`Generated: ${new Date().toLocaleDateString()}`, 20, 140);
+    
+    // Findings section
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Security Findings', 20, 170);
+    
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Critical Vulnerabilities: 2', 20, 190);
+    doc.text('High Risk Issues: 5', 20, 205);
+    doc.text('Medium Risk Issues: 12', 20, 220);
+    doc.text('Quick Wins Available: 3', 20, 235);
+    
+    // Assessment details
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Assessment Details', 20, 260);
+    
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    
+    let attackTypeDescription = '';
+    if (currentAssessment.plan === 'Red Team') {
+      attackTypeDescription = 'Red Team Assessment: Offensive security testing to identify vulnerabilities through simulated attacks.';
+    } else if (currentAssessment.plan === 'Blue Team') {
+      attackTypeDescription = 'Blue Team Assessment: Defensive security analysis focusing on detection and response capabilities.';
+    } else {
+      attackTypeDescription = 'Both Teams Assessment: Comprehensive security evaluation combining offensive testing and defensive analysis.';
+    }
+    
+    // Split text to fit page width
+    const splitText = doc.splitTextToSize(attackTypeDescription, 170);
+    doc.text(splitText, 20, 280);
+    
+    // Save the PDF
+    doc.save(`${currentAssessment.name.replace(/[^a-z0-9]/gi, '_')}_Security_Report.pdf`);
   };
 
   return (
@@ -166,7 +223,11 @@ const Dashboard = () => {
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-3">
-              <Button variant="outline" className="flex items-center">
+              <Button 
+                variant="outline" 
+                className="flex items-center"
+                onClick={generatePDF}
+              >
                 <Download className="w-4 h-4 mr-2" />
                 Download Report
               </Button>
