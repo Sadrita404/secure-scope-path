@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Pricing = () => {
   const plans = [
     {
-      name: "Red Team",
+      name: "Basic",
       price: "₹1,500",
       color: "text-foreground",
       bgColor: "bg-card",
@@ -18,11 +18,11 @@ const Pricing = () => {
         "Dashboard + downloadable PDF report",
         "Remediation guidance"
       ],
-      cta: "Choose Red Team",
+      cta: "Choose Basic",
       ctaClass: "btn-outline"
     },
     {
-      name: "Blue Team",
+      name: "Pro",
       price: "₹1,500",
       color: "text-foreground",
       bgColor: "bg-card",
@@ -35,11 +35,11 @@ const Pricing = () => {
         "Dashboard + downloadable PDF report",
         "Detection improvement guidance"
       ],
-      cta: "Choose Blue Team",
+      cta: "Choose Pro",
       ctaClass: "btn-outline"
     },
     {
-      name: "Both",
+      name: "Elite",
       price: "₹2,500",
       color: "text-cyber-green",
       bgColor: "bg-cyber-green/5",
@@ -53,7 +53,7 @@ const Pricing = () => {
         "Priority support",
         "Follow-up consultation"
       ],
-      cta: "Go Both",
+      cta: "Go Elite",
       ctaClass: "btn-cyber",
       popular: true
     }
