@@ -168,6 +168,49 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
+        {/* Team Sections */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <Card className="cursor-pointer hover:shadow-lg transition-all duration-300 hover:border-red-500/50" onClick={() => window.open('/red-team', '_blank')}>
+            <CardHeader>
+              <CardTitle className="text-xl flex items-center text-red-500">
+                <Target className="w-6 h-6 mr-3" />
+                Red Team Assessment
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-4">
+                Offensive security testing simulating real-world attacks to identify vulnerabilities and weaknesses in your system.
+              </p>
+              <div className="flex items-center justify-between">
+                <Badge variant="destructive" className="bg-red-500/10 text-red-500 border-red-500/20">
+                  Attack Simulation
+                </Badge>
+                <span className="text-sm text-muted-foreground">Click to open →</span>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="cursor-pointer hover:shadow-lg transition-all duration-300 hover:border-blue-500/50" onClick={() => window.open('/blue-team', '_blank')}>
+            <CardHeader>
+              <CardTitle className="text-xl flex items-center text-blue-500">
+                <Shield className="w-6 h-6 mr-3" />
+                Blue Team Assessment
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-4">
+                Defensive security analysis focusing on detection capabilities, incident response, and security monitoring.
+              </p>
+              <div className="flex items-center justify-between">
+                <Badge variant="secondary" className="bg-blue-500/10 text-blue-500 border-blue-500/20">
+                  Defense Analysis
+                </Badge>
+                <span className="text-sm text-muted-foreground">Click to open →</span>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <Card>

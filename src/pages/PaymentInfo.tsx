@@ -50,8 +50,7 @@ const PaymentInfo = () => {
       email: formData.contactEmail
     });
     
-    // Show success message and redirect
-    alert('Payment processed successfully! Redirecting to your dashboard...');
+    // Redirect directly to dashboard without any steps
     window.location.href = `/dashboard?${params.toString()}`;
   };
 
