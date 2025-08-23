@@ -211,6 +211,63 @@ const Dashboard = () => {
           </Card>
         </div>
 
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base flex items-center">
+                <Target className="w-4 h-4 mr-2 text-cyber-green" />
+                Findings
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">Critical</span>
+                  <span className="font-semibold text-destructive">2</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">High</span>
+                  <span className="font-semibold text-warning">5</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">Medium</span>
+                  <span className="font-semibold text-info">12</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base flex items-center">
+                <CheckCircle className="w-4 h-4 mr-2 text-cyber-green" />
+                Quick Wins
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-cyber-green mb-1">3</div>
+                <p className="text-sm text-muted-foreground">Easy fixes available</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base flex items-center">
+                <Clock className="w-4 h-4 mr-2 text-cyber-green" />
+                Time Remaining
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-warning mb-1">2.5h</div>
+                <p className="text-sm text-muted-foreground">Until completion</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* Actions */}
         <Card>
