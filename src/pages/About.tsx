@@ -9,7 +9,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h1 className="text-5xl font-bold mb-6">
-                About <span className="text-cyber-green">AegisProbe</span>
+                About <span className="text-cyber-green">QuantumLock</span>
               </h1>
               <p className="text-xl text-muted-foreground">
                 Authorized security assessments. Clear results. Stronger defenses.

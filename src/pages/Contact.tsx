@@ -52,10 +52,10 @@ const Contact = () => {
                         For general questions about our services and pricing
                       </p>
                       <a 
-                        href="mailto:hello@aegisprobe.com" 
+                        href="mailto:hello@quantumlock.com" 
                         className="text-cyber-green hover:text-cyber-green-bright"
                       >
-                        hello@aegisprobe.com
+                        hello@quantumlock.com
                       </a>
                     </div>
                   </div>
@@ -72,10 +72,10 @@ const Contact = () => {
                         For security concerns, legal questions, and compliance
                       </p>
                       <a 
-                        href="mailto:legal@aegisprobe.com" 
+                        href="mailto:legal@quantumlock.com" 
                         className="text-cyber-green hover:text-cyber-green-bright"
                       >
-                        legal@aegisprobe.com
+                        legal@quantumlock.com
                       </a>
                     </div>
                   </div>

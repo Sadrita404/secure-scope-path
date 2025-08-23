@@ -52,7 +52,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex h-16 items-center justify-between">
             <Link to="/" className="flex items-center space-x-2">
               <Shield className="h-8 w-8 text-cyber-green" />
-              <span className="text-2xl font-bold text-glow">Cyber</span>
+              <span className="text-2xl font-bold text-glow">QuantumLock</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -157,7 +157,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div className="col-span-1">
               <div className="flex items-center space-x-2 mb-4">
                 <Shield className="h-6 w-6 text-cyber-green" />
-                <span className="text-xl font-bold">Cyber</span>
+                <span className="text-xl font-bold">QuantumLock</span>
               </div>
               <p className="text-muted-foreground text-sm">
                 Authorized security assessments. Clear results. Stronger defenses.
@@ -177,8 +177,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>hello@cyber.com</li>
-                <li>legal@cyber.com</li>
+                <li>hello@quantumlock.com</li>
+                <li>legal@quantumlock.com</li>
                 <li>Emergency: +91-XXXXXXXXXX</li>
               </ul>
             </div>
@@ -194,7 +194,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </div>
           
           <div className="border-t border-border/40 mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Cyber. All rights reserved.</p>
+            <p>&copy; 2024 QuantumLock. All rights reserved.</p>
           </div>
         </div>
       </footer>
